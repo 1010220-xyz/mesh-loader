@@ -29,8 +29,8 @@ diff --git a/src/main.cpp b/src/main.cpp
 +#include <esp_ota_ops.h>
 +#include <esp_partition.h>
 +#endif
- #ifdef ARCH_PORTDUINO_WASM
- #include <emscripten.h>
+ #if !MESHTASTIC_EXCLUDE_GPS
+ #include "GPS.h"
  #endif
 @@ -364,6 +368,14 @@
  #ifndef PIO_UNIT_TESTING
